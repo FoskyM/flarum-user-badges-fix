@@ -4,6 +4,9 @@
 
 A [Flarum](http://flarum.org) extension. Fix notifications error caused by user badges because of no badges included in some pages without UserSerializer.
 
+![image](https://github.com/user-attachments/assets/562e8fbc-bad3-4a7d-8ef7-b62d9bd73632)
+
+
 ## Installation
 
 Install with composer:
