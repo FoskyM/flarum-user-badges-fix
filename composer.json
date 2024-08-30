@@ -24,7 +24,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "User Badges Fix",
+            "title": "User badges Fix",
             "category": "",
             "icon": {
                 "name": "fas fa-user-tag",
