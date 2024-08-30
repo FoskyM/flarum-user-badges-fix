@@ -6,6 +6,8 @@ A [Flarum](http://flarum.org) extension. Fix notifications error caused by user 
 
 ![image](https://github.com/user-attachments/assets/562e8fbc-bad3-4a7d-8ef7-b62d9bd73632)
 
+[TypeError: subject.badge().icon is not a function #32](https://github.com/v17development/flarum-user-badges/issues/32#issue-1823921215)
+
 
 ## Installation
 
