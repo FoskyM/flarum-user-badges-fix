@@ -12,13 +12,18 @@
 namespace FoskyM\UserBadgesFix;
 
 use Flarum\Extend;
+use Flarum\Api\Serializer\ForumSerializer;
+use Flarum\Api\Controller\ShowForumController;
+use Flarum\Api\Controller\ListNotificationsController;
+use V17Development\FlarumUserBadges\Api\Serializer\BadgeSerializer;
+use V17Development\FlarumUserBadges\Api\Serializer\UserBadgeSerializer;
 
 return [
-    (new Extend\Frontend('forum'))
-        ->js(__DIR__.'/js/dist/forum.js')
-        ->css(__DIR__.'/less/forum.less'),
-    (new Extend\Frontend('admin'))
-        ->js(__DIR__.'/js/dist/admin.js')
-        ->css(__DIR__.'/less/admin.less'),
-    new Extend\Locales(__DIR__.'/locale'),
+    (new Extend\ApiSerializer(ForumSerializer::class))
+        ->hasMany('badges', BadgeSerializer::class)
+        ->hasMany('userBadges', UserBadgeSerializer::class),
+
+    (new Extend\ApiController(ShowForumController::class))
+        ->addInclude(['badges', 'userBadges', 'userBadges.badge'])
+        ->prepareDataForSerialization(LoadForumBadgesRelationship::class),
 ];
